@@ -1,16 +1,58 @@
-# React + Vite
+# Artisan Kitchen Intelligence
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Artisan Kitchen Intelligence is a precision culinary workspace designed for professional chefs and home cooks who demand exactitude. It transcends simple recipe management by providing a dynamic environment where portions, dietary modes, and sourcing variations are calculated in real-time.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Scaling**: Instantly adjust recipes based on the number of people and meal frequency.
+- **Precision Method Adjustments**: Support for multiple cooking methods (Standard, Slow Cook, Sous Vide) with automatic ingredient adjustment factors.
+- **"Chef's Choice" Variations**: Toggle between standard and premium ingredient alternatives for elevated culinary results.
+- **Consolidated Inventory**: A living, aggregated shopping list that combines ingredients from all active recipes into a single,ByCategory inventory.
+- **Premium Aesthetics**: A responsive, high-fidelity interface featuring parchment textures, bronze accents, and elegant typography.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19**: Modern component architecture.
+- **Vite**: Ultra-fast build tool and development server.
+- **Tailwind CSS 4**: Utility-first styling with advanced design tokens.
+- **Lucide React**: Beautiful, minimalist iconography.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (Latest LTS recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Chanii2024/Artisan-Kitchen-Intelligence.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd Artisan-Kitchen-Intelligence
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Design System
+
+The application uses a curated "Parchment & Bronze" design system:
+- **Parchment**: Used for background elements to provide a tactile, organic feel.
+- **Bronze**: Primary accent color for critical actions and highlights.
+- **Stone**: Used for sophisticated typography and structural borders.
+
+## License
+
+Personal project by [Chanii2024](https://github.com/Chanii2024).
