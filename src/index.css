@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --color-parchment: #F9F7F2;
+
+  --color-bronze: #8C7851;
+  --color-bronze-light: #A8946D;
+  --color-bronze-dark: #6B5A3A;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --shadow-paper: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out;
+  --animate-scale-up: scaleUp 0.3s ease-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleUp {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Import after theme to ensure overrides if any, though @plugin "tailwindcss" usually goes first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-parchment);
+    font-family: var(--font-sans);
+    color: var(--color-stone-800);
+    -webkit-font-smoothing: antialiased;
+
+    /* Complex background pattern */
+    background-image: radial-gradient(#8C7851 0.5px, transparent 0.5px), radial-gradient(#8C7851 0.5px, #F9F7F2 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    background-blend-mode: multiply;
+  }
+
+  /* Subtle texture overlay to feel like paper */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    color: var(--color-bronze-dark);
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply appearance-none bg-white border border-bronze-light/40 rounded-md py-2 px-3 text-stone-700 leading-tight focus:outline-none focus:border-bronze focus:shadow-md transition-all duration-200 font-sans;
+  }
+
+  .btn-icon {
+    @apply p-2 rounded-full hover:bg-bronze-light/10 text-bronze transition-colors;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-stone-800;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-stone-700 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-bronze;
+  }
+}
